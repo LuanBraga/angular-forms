@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-house-editor',
@@ -17,14 +17,22 @@ export class HouseEditorComponent implements OnInit {
       street: [''],
       number: [''],
       zip: [''],
-    })
+    }),
+    aliases: this.fb.array([
+      this.fb.control('')
+    ])
   })
+
+  get aliases() {
+    return this.locationForm.get('aliases') as FormArray;
+  }
 
   constructor(private fb: FormBuilder) {
     console.log(this.locationForm)
    }
 
   ngOnInit(): void {
+    console.log(this.aliases);
   }
 
   updateLocation() {
@@ -34,6 +42,11 @@ export class HouseEditorComponent implements OnInit {
         street: 'Rua Nilda Lima'
       }
     })
+  }
+
+  addAlias(a: any) {
+    this.aliases.push(this.fb.control(''));
+    console.log(a);
   }
 
   onSubmit() {

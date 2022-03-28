@@ -1,3 +1,4 @@
+<!-- FormGroup directive-->
 <form [formGroup]="locationForm" (ngSubmit)="onSubmit()">
     <label for="country">Country: </label>
     <input id="country" type="text" formControlName="country"/>
@@ -8,6 +9,7 @@
     <label for="code">Code: </label>
     <input id="code" type="number" formControlName="code"/>
 
+    <!-- FormGroupName directive-->
     <div formGroupName="address">
         <h2>Address</h2>
 
@@ -22,6 +24,17 @@
 
         <label>zip: </label>
         <input id="zip" type="number" formControlName="zip">
+    </div>
+
+    <div formArrayName="aliases">
+        <h2>Aliases</h2>
+
+        <button type="button" (click)="addAlias(aliases)">+ Add another alias</button>
+    
+        <div *ngFor="let alias of aliases.controls; let i=index">
+            <label for="alias-{{ i }}">Alias {{i + 1}} : </label>
+            <input id="alias-{{ i }}" type="text" [formControlName]="i">
+        </div>
     </div>
     
     <p>Complete the form to enable button</p>
