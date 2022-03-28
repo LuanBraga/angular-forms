@@ -3,8 +3,14 @@
 <nav>
   <button type="button" (click)="toggleEditor('name')">Name Editor</button>
   <button type="button" (click)="toggleEditor('profile')">Profile Editor</button>
+  <button type="button" (click)="toggleEditor('enterprise')">Enterprise Editor</button>
+  <button type="button" (click)="toggleEditor('house')">House Editor</button>
 </nav>
 
 <app-name-editor *ngIf="showNameEditor"></app-name-editor>
 
 <app-profile-editor *ngIf="showProfileEditor"></app-profile-editor>
+
+<app-enterprise-editor *ngIf="showEnterpriseEditor"></app-enterprise-editor>
+
+<app-house-editor *ngIf="showHouseEditor"></app-house-editor>

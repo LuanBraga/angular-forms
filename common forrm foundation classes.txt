@@ -1,13 +1,44 @@
+AbstractControl
+    Is the base class for FormControl, FormGroup and FormArray.
+
+
 Common form foundation classes
 
 FormControl
     tracks the value and validation status of an individual form control.
 
 FormGroup
-     tracks the same values and status for a collection of form controls.
+    tracks the same values and status for a collection of form controls.
+    
+    A form group defines a form with a fixed set of controls that you can manage together.
 
 FormArray
     tracks the same values and status for an array of form controls.
 
+    A form array defines a dynamic form, where you can add and remove controls at run time. 
+
 ControlValueAccessor
     creates a bridge between Angular FormControl instances and built-in DOM elements.
+
+
+
+FormControl
+    tracks the value and validation status of an individual form control.
+
+    Properties
+
+        value
+            ready only
+
+Dynamic Forms
+    FormArray
+        As with form group instances, you can dynamically insert and remove controls from form array instances, 
+        and the form array instance value and validation status is calculated from its child controls. However, 
+        you don't need to define a key for each control by name, so this is a great option if you don't know the 
+        number of child values in advance.
+
+
+
+
+
+

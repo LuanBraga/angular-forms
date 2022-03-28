@@ -1,0 +1,8 @@
+<label for="cnpj">CNPJ: </label>
+<!-- Register the formControl in the template -->
+    <input id="cnpj" [formControl]="cnpj">
+    <button type="button" (click)="handleControlValue()">CNPJ padrão</button>
+
+    <p>
+        {{ cnpj.value }}
+    </p>
