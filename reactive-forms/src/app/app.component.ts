@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-export type EditorType = 'name' | 'profile' | 'enterprise' | 'house';
+export type EditorType = 'name' | 'profile' | 'enterprise' | 'house' | 'cine';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ export type EditorType = 'name' | 'profile' | 'enterprise' | 'house';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  editor: EditorType = 'name';
+  editor: EditorType = 'cine';
 
   get showNameEditor() {
     return this.editor === 'name';
@@ -18,13 +18,18 @@ export class AppComponent {
     return this.editor === 'profile';
   }
 
-  get showEnterpriseEditor() {
-    return this.editor === 'enterprise';
+  // get showEnterpriseEditor() {
+  //   return this.editor === 'enterprise';
+  // }
+
+  // get showHouseEditor() {
+  //   return this.editor === 'house';
+  // }
+
+  get showCineForm() {
+    return this.editor === 'cine'
   }
 
-  get showHouseEditor() {
-    return this.editor === 'house';
-  }
 
   toggleEditor(type: EditorType) {
     this.editor = type;

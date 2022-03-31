@@ -7,6 +7,7 @@ import { NameEditorComponent } from './name-editor/name-editor.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 import { EnterpriseEditorComponent } from './enterprise-editor/enterprise-editor.component';
 import { HouseEditorComponent } from './house-editor/house-editor.component';
+import { CineFormComponent } from './cine-form/cine-form.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HouseEditorComponent } from './house-editor/house-editor.component';
     NameEditorComponent,
     ProfileEditorComponent,
     EnterpriseEditorComponent,
-    HouseEditorComponent
+    HouseEditorComponent,
+    CineFormComponent
   ],
   imports: [
     BrowserModule,
