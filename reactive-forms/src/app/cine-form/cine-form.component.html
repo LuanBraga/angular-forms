@@ -17,6 +17,13 @@
         <input formControlName="postalCodeControl" type="text" placeholder="Enter zip code"/>
     </form>
 
+    <div formArrayName="tickets" *ngFor="let t of tickets.controls; index as i">
+        <div [formGroupName]="i">
+            <input formControlName="name" id="{{'name' + i}}" type="text" placeholder="Enter name"/>
+            <input formControlName="age" id="{{'age' + i}}" type="text" placeholder="Enter age"/>
+        </div>
+    </div>
+
     <button type="submit">Submit</button>
 </form>
 
