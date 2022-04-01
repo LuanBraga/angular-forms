@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 import { FormControl, FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 
 @Component({
@@ -40,12 +41,16 @@ export class CineFormComponent implements OnInit {
         postalCodeControl: []
       }),
       tickets: this.fb.array([
-        this.createTicket()
+        // this.createTicket()
       ], Validators.required)
     })
+
+    console.log(this.buyTicketForm);
   }
 
   createTicket(): FormGroup{
+    console.log(this.buyTicketForm);
+
     return this.fb.group({
       name: [null, Validators.required],
       age: [null, Validators.required]
